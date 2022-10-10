@@ -161,7 +161,7 @@ export default class ExcelHelpers {
       ExcelHelpers.getHeaderCsv(file, async (headers) => {
         //TODO: convert key to label
         const trans = headers?.map(col => mappingColumns[col]?.customLabel ?? col)
-        ExcelHelpers.downloadExcelFile(file, trans, onCompleted, e => {
+        ExcelHelpers.downloadExcelFile(file, trans, fileName, onCompleted, e => {
           if(onError){
             onError(e)
           }
