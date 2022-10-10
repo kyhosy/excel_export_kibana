@@ -1,0 +1,18 @@
+{
+  "id": "excelExport",
+  "version": "1.0.0",
+  "kibanaVersion": "kibana",
+  "server": false,
+  "ui": true,
+  "owner": {
+    "name": "hardikpnsp",
+    "githubTeam": ""
+  },
+  "requiredPlugins": [
+    "uiActions",
+    "embeddable",
+    "discover",
+    "data"
+  ],
+  "optionalPlugins": []
+}
