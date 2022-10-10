@@ -125,7 +125,7 @@ export class GetExcelPanelAction implements ActionDefinition<ActionContext> {
         //TODO: convert header from key to label
         // const workbook = read(rawResponse, { type: 'string', raw: true });
         // writeFile(workbook, `${embeddable.getSavedSearch().title}.xlsx`, { type: 'binary' });
-        // const fileName = `${embeddable.getSavedSearch().title}.xlsx`
+        const fileName = `${embeddable.getSavedSearch().title}.xlsx`
         ExcelHelpers.downloadExcelFromCsv(rawResponse, fileName, () => {
 
         }, () => {
