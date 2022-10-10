@@ -126,7 +126,9 @@ export class GetExcelPanelAction implements ActionDefinition<ActionContext> {
         // const workbook = read(rawResponse, { type: 'string', raw: true });
         // writeFile(workbook, `${embeddable.getSavedSearch().title}.xlsx`, { type: 'binary' });
         const fileName = `${embeddable.getSavedSearch().title}.xlsx`
-        ExcelHelpers.downloadExcelFromCsv(rawResponse, fileName, () => {
+        const mappingCols = savedSearch?.searchSource?.fields?.index?.fieldAttrs
+        console.log('mappingCols>>>', mappingCols)
+        ExcelHelpers.downloadExcelFromCsv(rawResponse, fileName, mappingCols, () => {
 
         }, () => {
           this.onGenerationFail.bind(this)

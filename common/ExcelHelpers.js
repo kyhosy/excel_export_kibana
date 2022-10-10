@@ -157,9 +157,11 @@ export default class ExcelHelpers {
     });
   }
 
-  static downloadExcelFromCsv(file, fileName, onCompleted, onError){
+  static downloadExcelFromCsv(file, fileName, mappingColumns, onCompleted, onError){
       ExcelHelpers.getHeaderCsv(file, async (headers) => {
-        ExcelHelpers.downloadExcelFile(file, headers, onCompleted, e => {
+        //TODO: convert key to label
+        const trans = headers?.map(col => mappingColumns[col]?.customLabel ?? col)
+        ExcelHelpers.downloadExcelFile(file, trans, onCompleted, e => {
           if(onError){
             onError(e)
           }
